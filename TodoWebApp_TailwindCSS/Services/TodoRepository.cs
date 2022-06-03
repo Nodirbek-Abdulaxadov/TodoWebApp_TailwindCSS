@@ -24,7 +24,7 @@ namespace TodoWebApp_TailwindCSS.Services
         {
             TodoModel model = new TodoModel()
             {
-                Id = list.OrderByDescending(todo => todo.Id).First().Id + 1,
+                Id = list.Count > 0 ? list.OrderByDescending(todo => todo.Id).First().Id + 1 : 1,
                 Title = title,
                 IsDone = false
             };
